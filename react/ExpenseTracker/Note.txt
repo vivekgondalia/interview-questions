@@ -1,0 +1,8 @@
+//Concepts Covered in this Exercise
+
+- Multiple Components
+- Shared State - useState Hook
+- Form - Text, Number, Select
+- Form - React Hook Form 
+- Event Handling - Add, Delete and Filter Expenses
+- Conditional Rendering
