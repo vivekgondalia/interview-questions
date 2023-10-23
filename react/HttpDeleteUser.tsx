@@ -6,7 +6,7 @@ interface User {
   name: string;
 }
 
-function HttpGetWithLoadingMotion() {
+function HttpDeleteUser() {
   const [users, setUsers] = useState<User[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -26,25 +26,45 @@ function HttpGetWithLoadingMotion() {
         if (err instanceof CanceledError) return;
         setError(err.message);
         setIsLoading(false);
-      })
-      .finally(() => {
-        //finally should work on prd but does not work with STRICT MODE on dev server
-        //to see the loading effect while the reuest is being fetched setIsLoading in .then() and .catch()
-        setIsLoading(false);
       });
   }, []);
+
+  const deleteUser = (user: User) => {
+    const originalUsers = [...users];
+
+    //optimistic update : ui first / servers second
+    setUsers(users.filter((u) => u.id !== user.id));
+    axios
+      .delete("https://jsonplaceholder.typicode.com/users/" + user.id)
+      .catch((err) => {
+        //show error and restore original users
+        setError(err.message);
+        setUsers(originalUsers);
+      });
+  };
 
   return (
     <>
       {error && <p className="text-danger">{error}</p>}
       {isLoading && <div className="spinner-border"></div>}
-      <ul>
+      <ul className="list-group">
         {users.map((user) => (
-          <li key={user.id}></li>
+          <li
+            key={user.id}
+            className="list-group-item d-flex justify-content-between"
+          >
+            {user.name}
+            <button
+              className="btn btn-outline-danger"
+              onClick={() => deleteUser(user)}
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
     </>
   );
 }
 
-export default HttpGetWithLoadingMotion;
+export default HttpDeleteUser;
