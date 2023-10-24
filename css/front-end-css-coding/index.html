@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend CSS</title>
+    <style>
+      body {
+        background-color: #f6f9fc;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 0;
+      }
+
+      div#wrapper {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .category {
+        flex-grow: 1;
+        margin-right: 10px;
+      }
+
+      div.question {
+        display: flex;
+        align-items: center;
+        color: #11967c;
+        border-right: 25px solid #11967e;
+        padding: 0 20px 0 5px;
+        margin-bottom: 15px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 20%);
+        border-radius: 2px;
+      }
+
+      div.question > h3 {
+        transition: 0s;
+        background: white;
+      }
+
+      div.question > h3:hover {
+        cursor: pointer;
+        color: black;
+        transition-delay: 0.5s;
+      }
+
+      div.question > div.status {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+        border-radius: 50%;
+      }
+
+      div.status.correct {
+        background-image: linear-gradient(#04ff00, #369536);
+      }
+
+      div.status.partially-correct {
+        background-image: linear-gradient(#fbf82b, #ffc63b);
+      }
+
+      div.status.incorrect {
+        background-image: linear-gradient(#ff0000, #760000);
+      }
+
+      div.status.unattempted {
+        border: 1px solid #6772e54d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Interview Questions</h1>
+    <div id="wrapper">
+      <div class="category">
+        <h2>HTML</h2>
+        <div class="question">
+          <div class="status correct"></div>
+          <h3>Sign-Up Form</h3>
+        </div>
+        <div class="question">
+          <div class="status correct"></div>
+          <h3>Item Cart</h3>
+        </div>
+        <div class="question">
+          <div class="status partially-correct"></div>
+          <h3>Spaghettin Recipe</h3>
+        </div>
+      </div>
+      <div class="category">
+        <h2>CSS</h2>
+        <div class="question">
+          <div class="status correct"></div>
+          <h3>Rainbow Circles</h3>
+        </div>
+        <div class="question">
+          <div class="status correct"></div>
+          <h3>Nabart</h3>
+        </div>
+        <div class="question">
+          <div class="status partially-correct"></div>
+          <h3>Pig Emoji</h3>
+        </div>
+      </div>
+      <div class="category">
+        <h2>Javascript</h2>
+        <div class="question">
+          <div class="status correct"></div>
+          <h3>Testing Framework</h3>
+        </div>
+        <div class="question">
+          <div class="status correct"></div>
+          <h3>Array Methods</h3>
+        </div>
+        <div class="question">
+          <div class="status partially-correct"></div>
+          <h3>Event Target</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

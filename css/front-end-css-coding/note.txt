@@ -1,0 +1,8 @@
+//concepts used in this exercise
+
+- flexbox : wrap, grow, align-items
+- box model : margin, padding, border
+- box-shadow
+- transition , transition delay
+- psuedo class :hover
+- liner-gradient 
