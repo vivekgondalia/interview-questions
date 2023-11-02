@@ -32,6 +32,8 @@ public class Main {
 //        System.out.println(Arrays.toString(array));
 //        list.printMiddle();
 		
+		
+		//***STACK***
 //		Stack<Integer> stack = new Stack<>();
 //		stack.push(10);
 //		stack.push(20);
@@ -48,10 +50,22 @@ public class Main {
 //		var isEmpty = stack.isEmpty();
 //		System.out.println("Is Current Stack Empty? " + isEmpty);
 		
-		var stringReverser = new StringReverser();
-		String str = "abcd";
-		System.out.println("Original String : " +  str);
-		System.out.println("Reverse String : " +  stringReverser.reverse(str));
+		//***STRING REVERSE***
+//		var stringReverser = new StringReverser();
+//		String str = "abcd";
+//		System.out.println("Original String : " +  str);
+//		System.out.println("Reverse String : " +  stringReverser.reverse(str));
+		
+		//***BALANCED EXPRESSION***
+		var balancedExpression = new BalancedExpression();
+		System.out.println("(()) : "+ balancedExpression.isBalanced("(())"));
+		//Edge Cases
+		//(
+		//(()
+		//)(
+		System.out.println("(1 : "+ balancedExpression.isBalanced("(1"));
+		System.out.println("((1) : "+ balancedExpression.isBalanced("((1)"));
+		System.out.println(")( : "+ balancedExpression.isBalanced(")("));
 		
 	}
 
