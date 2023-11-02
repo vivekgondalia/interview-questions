@@ -8,25 +8,15 @@ public class BalancedExpression {
 		
 		Stack<Character> stack = new Stack<>();
 		
-		for(int i =0; i < input.length(); i++) {
-			Character currChar = input.charAt(i);
-			//if str[i] is open-bracket ({[< then push to stack
-			if(isCharOpenBracket(currChar))
-				stack.push(currChar);
+		for(char ch : input.toCharArray()) {
+			if(isCharOpenBracket(ch))
+				stack.push(ch);
 			
-			//if str[i] is closed-bracket )}}> then pop the stack and compare
-			if(isCharCloseBracket(currChar)) {
-				//if str[i] == stack.pop() continue till the end
+			if(isCharCloseBracket(ch)) {
 				if(stack.isEmpty())
 					return false;
-				Character lastOpenBracket = stack.pop();
-				
-				//if str[i] != stack.pop() break; return false
-//				if(currChar != lastOpenBracket)
-//					break;
+				stack.pop();
 			}
-				
-			//if anything else then brackets continue for loop;
 		}
 		
 		if(stack.isEmpty())
