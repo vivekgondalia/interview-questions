@@ -32,21 +32,27 @@ public class Main {
 //        System.out.println(Arrays.toString(array));
 //        list.printMiddle();
 		
-		Stack<Integer> stack = new Stack<>();
-		stack.push(10);
-		stack.push(20);
-		stack.push(30);
-		System.out.println("Current Stack: " + stack);
+//		Stack<Integer> stack = new Stack<>();
+//		stack.push(10);
+//		stack.push(20);
+//		stack.push(30);
+//		System.out.println("Current Stack: " + stack);
+//		
+//		var poppedValue = stack.pop();
+//		System.out.println("Performed Pop(). Popped Value from Stack: " + poppedValue);
+//		System.out.println("Current Stack: " + stack);
+//
+//		var topValue = stack.peek();
+//		System.out.println("Top Value from Stack: " + topValue);
+//
+//		var isEmpty = stack.isEmpty();
+//		System.out.println("Is Current Stack Empty? " + isEmpty);
 		
-		var poppedValue = stack.pop();
-		System.out.println("Performed Pop(). Popped Value from Stack: " + poppedValue);
-		System.out.println("Current Stack: " + stack);
-
-		var topValue = stack.peek();
-		System.out.println("Top Value from Stack: " + topValue);
-
-		var isEmpty = stack.isEmpty();
-		System.out.println("Is Current Stack Empty? " + isEmpty);
+		var stringReverser = new StringReverser();
+		String str = "abcd";
+		System.out.println("Original String : " +  str);
+		System.out.println("Reverse String : " +  stringReverser.reverse(str));
+		
 	}
 
 }
