@@ -63,9 +63,13 @@ public class Main {
 		//(
 		//(()
 		//)(
+		//(]
 		System.out.println("(1 : "+ balancedExpression.isBalanced("(1"));
 		System.out.println("((1) : "+ balancedExpression.isBalanced("((1)"));
 		System.out.println(")( : "+ balancedExpression.isBalanced(")("));
+		System.out.println(")] : "+ balancedExpression.isBalanced(")]"));
+		System.out.println("(<{12}*3>) : "+ balancedExpression.isBalanced("(<{12}*3>)"));
+		System.out.println("(<{}>) : "+ balancedExpression.isBalanced("(<{}>)"));
 		
 	}
 
